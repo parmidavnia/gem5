@@ -36,4 +36,4 @@ class BasicRouter(ClockedObject):
     router_id = Param.Int("ID in relation to other routers")
 
     # only used by garnet
-    latency   = Param.Cycles(1, "number of cycles inside router")
+    latency   = Param.Cycles(2, "number of cycles inside router")

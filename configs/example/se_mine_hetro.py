@@ -260,16 +260,55 @@ if options.simpoint_profile:
 
 ##############################################code for assigning manually:
 process = []
+cmnd =[]
+count = options.num_cpus
+#0
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#1
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#2
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#3
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#4
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#5
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#6
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#7
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#8
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#9
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#10
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#11
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#12
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#13
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#14
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+#15
+cmnd.append('tests/test-progs/myTests/matrixmult/a.out')
+
+
 for i in xrange(options.num_cpus):
-    tmp = Process(pid = 100 + i, cmd='tests/test-progs/hello/bin/x86/linux/hello')
+    tmp = Process(pid = 100 + i, cmd = cmnd[i])
+
 #     process[i].cmd = 'tests/test-progs/hello/bin/x86/linux/hello'
 
     process.append(tmp)
 
+ 
 
 for i in xrange(options.num_cpus):
     system.cpu[i].workload = process[i]
     system.cpu[i].createThreads()
+           
 
 ############################################################################
 
